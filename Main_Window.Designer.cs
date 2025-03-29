@@ -33,7 +33,6 @@
             this.pageHeader = new AntdUI.PageHeader();
             this.tabs_Main = new AntdUI.Tabs();
             this.Home = new AntdUI.TabPage();
-            this.label_Progress = new AntdUI.Label();
             this.progress_Launch = new AntdUI.Progress();
             this.label_ProgramCmdLine = new AntdUI.Label();
             this.select_SelectPrograms = new AntdUI.Select();
@@ -50,6 +49,7 @@
             this.label_Settings_CmdLine = new AntdUI.Label();
             this.button_Settings_OpenProgramsEditor = new AntdUI.Button();
             this.About = new AntdUI.TabPage();
+            this.button_UpdateLog = new AntdUI.Button();
             this.label_AboutVersion = new AntdUI.Label();
             this.button_About_Github = new AntdUI.Button();
             this.button_About_Bilibili = new AntdUI.Button();
@@ -100,7 +100,6 @@
             // 
             // Home
             // 
-            this.Home.Controls.Add(this.label_Progress);
             this.Home.Controls.Add(this.progress_Launch);
             this.Home.Controls.Add(this.label_ProgramCmdLine);
             this.Home.Controls.Add(this.select_SelectPrograms);
@@ -114,14 +113,6 @@
             this.Home.Size = new System.Drawing.Size(594, 234);
             this.Home.TabIndex = 0;
             this.Home.Text = "主页";
-            // 
-            // label_Progress
-            // 
-            this.label_Progress.Location = new System.Drawing.Point(9, 134);
-            this.label_Progress.Name = "label_Progress";
-            this.label_Progress.Size = new System.Drawing.Size(75, 23);
-            this.label_Progress.TabIndex = 10;
-            this.label_Progress.Text = "当前执行:";
             // 
             // progress_Launch
             // 
@@ -291,6 +282,7 @@
             // 
             // About
             // 
+            this.About.Controls.Add(this.button_UpdateLog);
             this.About.Controls.Add(this.label_AboutVersion);
             this.About.Controls.Add(this.button_About_Github);
             this.About.Controls.Add(this.button_About_Bilibili);
@@ -304,6 +296,18 @@
             this.About.Size = new System.Drawing.Size(594, 234);
             this.About.TabIndex = 2;
             this.About.Text = "关于";
+            // 
+            // button_UpdateLog
+            // 
+            this.button_UpdateLog.HandCursor = System.Windows.Forms.Cursors.Default;
+            this.button_UpdateLog.IconRatio = 1F;
+            this.button_UpdateLog.Location = new System.Drawing.Point(443, 3);
+            this.button_UpdateLog.Name = "button_UpdateLog";
+            this.button_UpdateLog.Size = new System.Drawing.Size(142, 40);
+            this.button_UpdateLog.TabIndex = 7;
+            this.button_UpdateLog.Text = "更新日志";
+            this.button_UpdateLog.Type = AntdUI.TTypeMini.Primary;
+            this.button_UpdateLog.Click += new System.EventHandler(this.button_UpdateLog_Click);
             // 
             // label_AboutVersion
             // 
@@ -432,8 +436,8 @@
         private AntdUI.Switch switch_StartLaunch;
         private AntdUI.Label label_StartLaunch;
         private AntdUI.TooltipComponent tooltipComponent;
-        private AntdUI.Label label_Progress;
         private AntdUI.Progress progress_Launch;
+        private AntdUI.Button button_UpdateLog;
     }
 }
 

@@ -720,7 +720,7 @@ namespace UnifiedLauncher
         //变量========================================================================================
         public static string Title = "Unified Launcher";
         public static string Fork = "Release";
-        public static string Version = "1.0.0.0";
+        public static string Version = "1.1.0.0";
         public static string RunPath = Directory.GetCurrentDirectory();
         public static string ConfigPath = RunPath + "\\config.ini";
         public static string ProgramsPath = RunPath + "\\Programs.ini";
@@ -790,6 +790,9 @@ namespace UnifiedLauncher
             {
                 button_Launch_Click(null, EventArgs.Empty);
             }
+
+            //初始化
+            tabs_Main.SelectedIndex = 0;
         }
 
         private void button_OpenProgramsEditor_Click(object sender, EventArgs e)
@@ -1030,6 +1033,16 @@ namespace UnifiedLauncher
             {
                 WriteConfig(ConfigPath, "config", "AutoLaunch", "False");
             }
+        }
+
+        private void button_UpdateLog_Click(object sender, EventArgs e)
+        {
+            AntdUI.Modal.open(new AntdUI.Modal.Config(this, "", "")
+            {
+                Title = "更新日志",
+                Content = "Release1.1.0.0更新日志:\n更新:\n    -在\"关于\"界面添加更新日志按钮\n修改:\n    -删除主页上方的\"当前执行:\"标签\n    -修复了启动时的主页默认为设置的问题",
+                Icon = AntdUI.TType.Info
+            });
         }
     }
 }
